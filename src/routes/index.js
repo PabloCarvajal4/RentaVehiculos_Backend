@@ -1,6 +1,7 @@
 const express = require('express');
 const vehiculosController = require('../controllers/vehiculosController');
 const rentadosController = require('../controllers/RentadosController');
+const FacturaController = require('../controllers/FacturaController');
 
 const { Router } = require('express');
 const router = Router();
@@ -42,6 +43,12 @@ router.get('/rentados', rentadosController.obtenerVehiculos);
 router.post('/rentados', rentadosController.crear);
 router.get('/rentados/:id', rentadosController.obtenerRentado);
 router.delete('/rentados/:id', rentadosController.eliminarVehiculo);
+
+/*------------------------VEHICULOS RENTADOS-------------------- */
+router.get('/facturas', FacturaController.obtenerFacturas);
+router.post('/crear-factura', FacturaController.crearFactura);
+router.delete('/crear-factura/:id', FacturaController.eliminarFactura);
+router.get('/crear-factura/:id', FacturaController.obtenerFactura);
 
 async function verifyToken(req, res, next) {
 	try {
