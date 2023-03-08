@@ -47,7 +47,7 @@ router.delete('/rentados/:id', rentadosController.eliminarVehiculo);
 /*------------------------VEHICULOS RENTADOS-------------------- */
 router.get('/facturas', FacturaController.obtenerFacturas);
 router.post('/crear-factura', FacturaController.crearFactura);
-router.delete('/crear-factura/:id', FacturaController.eliminarFactura);
+router.delete('/facturas/:id', FacturaController.eliminarFactura);
 router.get('/crear-factura/:id', FacturaController.obtenerFactura);
 
 async function verifyToken(req, res, next) {
