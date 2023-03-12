@@ -2,6 +2,7 @@ const express = require('express');
 const vehiculosController = require('../controllers/vehiculosController');
 const rentadosController = require('../controllers/RentadosController');
 const FacturaController = require('../controllers/FacturaController');
+const ZonasController = require('../controllers/ZonasController');
 
 const { Router } = require('express');
 const router = Router();
@@ -49,6 +50,10 @@ router.get('/facturas', FacturaController.obtenerFacturas);
 router.post('/crear-factura', FacturaController.crearFactura);
 router.delete('/facturas/:id', FacturaController.eliminarFactura);
 router.get('/crear-factura/:id', FacturaController.obtenerFactura);
+
+/*------------------------VEHICULOS RENTADOS-------------------- */
+router.get('/zonas', ZonasController.obtenerZonas);
+router.post('/zonas', ZonasController.crearZona);
 
 async function verifyToken(req, res, next) {
 	try {
