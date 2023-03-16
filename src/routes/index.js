@@ -36,7 +36,7 @@ router.post('/signin', async (req, res) => {
 router.get('/progreso', vehiculosController.obtenerVehiculos);
 router.delete('/progreso/:id', vehiculosController.eliminarVehiculo);
 router.get('/progreso/:id', vehiculosController.obtenerVehiculo);
-router.put('/:id', vehiculosController.actualizarVehiculo);
+router.put('/progreso/:id', vehiculosController.actualizarVehiculo);
 router.post('/progreso', vehiculosController.crearVehiculo);
 
 /*------------------------VEHICULOS RENTADOS-------------------- */
